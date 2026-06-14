@@ -87,3 +87,53 @@ Purple-Team-Lab
 * Splunk enables rapid detection development and validation.
 * MITRE ATT&CK mapping helps measure defensive coverage against known adversary techniques.
 * Detection engineering and threat hunting are closely aligned within Purple Team operations.
+
+## Purple Team Methodology
+
+The Purple Team approach combines offensive security techniques with defensive monitoring capabilities.
+
+In this lab, attacker activities were simulated on a Windows endpoint while Sysmon telemetry was collected and analyzed through Splunk Enterprise.
+
+Each activity was validated against corresponding detections to ensure visibility and monitoring coverage.
+
+---
+
+## Detection Workflow
+
+The detection development process followed these steps:
+
+1. Simulate attacker behavior
+2. Generate Windows telemetry
+3. Collect events using Sysmon
+4. Ingest logs into Splunk
+5. Develop detection logic
+6. Validate detection results
+7. Map activity to MITRE ATT&CK
+8. Document findings
+
+---
+
+## Lessons Learned
+
+* Process creation events provide valuable visibility into attacker execution techniques.
+* PowerShell remains one of the most important sources of security telemetry.
+* Account discovery activity can often be detected using native Windows command execution.
+* File creation events help identify staging and payload deployment activity.
+* Detection validation is critical to ensure monitoring effectiveness.
+
+---
+
+## Future Enhancements
+
+Future improvements may include:
+
+* Credential Access scenarios
+* Persistence techniques
+* Scheduled Task monitoring
+* Registry modification detections
+* Lateral Movement simulations
+* Sigma rule development
+* Splunk alert creation
+* Detection-as-Code integration
+* MITRE ATT&CK coverage dashboards
+
