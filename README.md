@@ -1,5 +1,3 @@
----
-
 ## Detection Scenarios
 
 ### 1. PowerShell Execution
