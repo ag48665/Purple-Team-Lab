@@ -1,16 +1,28 @@
-\# Purple Team Lab
+\---
 
 
 
-\## Overview
+\## Detection Scenarios
 
 
 
-This project demonstrates Purple Team operations by simulating attacker techniques and validating defensive detections using Splunk Enterprise, Sysmon telemetry, and MITRE ATT\&CK.
+\### 1. PowerShell Execution
 
 
 
-The objective of the lab is to emulate common adversary behavior, observe generated telemetry, validate detections, and document security monitoring coverage.
+\*\*Objective:\*\* Detect PowerShell execution activity and validate process creation monitoring.
+
+
+
+\*\*MITRE ATT\&CK:\*\* T1059.001 – PowerShell
+
+
+
+\*\*Evidence:\*\*
+
+
+
+!\[PowerShell Execution](screenshots/powershell\_execution.png)
 
 
 
@@ -18,39 +30,23 @@ The objective of the lab is to emulate common adversary behavior, observe genera
 
 
 
-\## Environment
+\### 2. Command Shell Execution
 
 
 
-| Component | Details           |
-
-| --------- | ----------------- |
-
-| SIEM      | Splunk Enterprise |
-
-| Endpoint  | Windows 11        |
-
-| Telemetry | Sysmon            |
-
-| Framework | MITRE ATT\&CK      |
+\*\*Objective:\*\* Detect execution of Windows Command Prompt.
 
 
 
-\---
+\*\*MITRE ATT\&CK:\*\* T1059.003 – Windows Command Shell
 
 
 
-\## Attack Scenarios
+\*\*Evidence:\*\*
 
 
 
-\* PowerShell Execution
-
-\* Account Discovery
-
-\* Command Shell Execution
-
-\* File Creation Activity
+!\[Command Shell](screenshots/command\_shell.png)
 
 
 
@@ -58,41 +54,23 @@ The objective of the lab is to emulate common adversary behavior, observe genera
 
 
 
-\## Detection Validation
+\### 3. Account Discovery
 
 
 
-Each attack scenario is mapped to corresponding Splunk detections and MITRE ATT\&CK techniques.
+\*\*Objective:\*\* Detect account enumeration activity using native Windows commands.
 
 
 
-The lab demonstrates how offensive activity generates telemetry that can be identified through defensive monitoring.
+\*\*MITRE ATT\&CK:\*\* T1087 – Account Discovery
 
 
 
-\---
+\*\*Evidence:\*\*
 
 
 
-\## Skills Demonstrated
-
-
-
-\* Purple Team Operations
-
-\* Adversary Emulation
-
-\* Detection Engineering
-
-\* Splunk SPL Development
-
-\* Sysmon Analysis
-
-\* MITRE ATT\&CK Mapping
-
-\* Threat Hunting
-
-\* SOC Analysis
+!\[Account Discovery](screenshots/account\_discovery.png)
 
 
 
@@ -100,19 +78,107 @@ The lab demonstrates how offensive activity generates telemetry that can be iden
 
 
 
-\## Author
+\### 4. File Creation Activity
 
 
 
-\*\*Agata Gabara\*\*
+\*\*Objective:\*\* Detect file creation events using Sysmon Event ID 11.
 
 
 
-Cybersecurity Analyst | SOC Analyst | Threat Hunter
+\*\*MITRE ATT\&CK:\*\* T1074 – Data Staged
 
 
 
-GitHub: https://github.com/ag48665
+\*\*Evidence:\*\*
+
+
+
+!\[File Creation](screenshots/file\_creation.png)
+
+
+
+\---
+
+
+
+\## MITRE ATT\&CK Coverage
+
+
+
+| Technique ID | Technique             |
+
+| ------------ | --------------------- |
+
+| T1059.001    | PowerShell            |
+
+| T1059.003    | Windows Command Shell |
+
+| T1087        | Account Discovery     |
+
+| T1074        | Data Staged           |
+
+
+
+\---
+
+
+
+\## Repository Structure
+
+
+
+```text
+
+Purple-Team-Lab
+
+│
+
+├── README.md
+
+│
+
+├── attack-scenarios
+
+│   └── powershell\_execution.md
+
+│
+
+├── detections
+
+│
+
+└── screenshots
+
+&#x20;   ├── powershell\_execution.png
+
+&#x20;   ├── command\_shell.png
+
+&#x20;   ├── account\_discovery.png
+
+&#x20;   └── file\_creation.png
+
+```
+
+
+
+\---
+
+
+
+\## Key Takeaways
+
+
+
+\* Purple Team exercises improve detection coverage by validating security monitoring against simulated attacker activity.
+
+\* Sysmon provides detailed visibility into process creation, file activity, and command execution.
+
+\* Splunk enables rapid detection development and validation.
+
+\* MITRE ATT\&CK mapping helps measure defensive coverage against known adversary techniques.
+
+\* Detection engineering and threat hunting are closely aligned within Purple Team operations.
 
 
 
